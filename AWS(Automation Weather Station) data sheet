@@ -1,0 +1,45 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_excel ('DataTekins.xlsx',sheet_name ='Sheet2')
+print (df)
+
+hari=[]
+jam=[]
+SuhuAWS=[]
+ParameterHumidityAWS=[]
+ParameterTekananAWS=[]
+
+for i in df.index:
+
+    Listhari=df['hari']
+    Listjam=df['Jam']
+    ListSuhuAWS=df['SuhuAWS']
+    ListParameterHumidityAWS=df['ParameterHumidityAWS']
+    ListParameterTekananAWS=df['ParameterTekananAWS']
+
+
+
+
+plt.title("GRAFIK SUHU AWS")
+plt.plot(Listjam,ListSuhuAWS,"b-o",label="suhu AWS")
+plt.xlabel("jam")
+plt.ylabel('suhu')
+plt.legend
+plt.show()
+
+
+plt.title("GRAFIK PARAMETERHUMIDITY")
+plt.plot(Listjam,ListParameterHumidityAWS,"r-o",label="suhu AWS")
+plt.xlabel("jam")
+plt.ylabel('suhu')
+plt.legend
+plt.show()
+
+
+plt.title("GRAFIK TEKANAN AWS")
+plt.plot(Listjam,ListParameterTekananAWS,"b-o",label="suhu AWS")
+plt.xlabel("jam")
+plt.ylabel('suhu')
+plt.legend
+plt.show()
